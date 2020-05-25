@@ -1,66 +1,49 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  handleShowToast(){
+    wx.showToast({
+      title: 'hello world',
+      duration: 2000,
+      mask: true,
+      success: function(){
+        console.log('......')
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleShowModal(){
+    wx.showModal({
+      title: '标题',
+      content: '我是内容',
+      cancelText: '返回',
+      cancelColor: '#FF0000'
+      
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleShowLoding(){
+    wx.showLoading({
+      title: '图片加载中',
+      mask: true
+    })
+    setTimeout(() => {
+      wx.hideLoading()
+    }, 2000);
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleShowAction(){
+    wx.showActionSheet({
+      itemList: ['照片','拍照'],
+      success(res){
+        console.log(res)
+      },
+      fail(err){
+        console.log(err)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function(options){
+    return{
+      title: 'hello world',
+      path: '/pages/about/about',
+      imageUrl: 'https://pics6.baidu.com/feed/f2deb48f8c5494ee2cfbed75076b57f898257e22.jpeg?token=aa43832914f597e729a90124af6f6231'
+    }
   }
 })
