@@ -1,0 +1,6 @@
+<!-- 1.具名插槽的使用 -->
+<view>
+  <view class="view1"><slot name="left"></slot></view>
+  <view class="view1"><slot name="center"></slot></view>
+  <view class="view1"><slot name="right"></slot></view>
+</view>

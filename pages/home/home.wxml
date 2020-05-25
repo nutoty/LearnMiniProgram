@@ -1,3 +1,31 @@
 <!--pages/home/home.wxml-->
 <text class="title">hello world</text>
 <button>按钮</button>
+
+<!-- 1.使用自定义组件 -->
+<!-- <my-cpn></my-cpn>
+<my-cpn></my-cpn> -->
+
+<!--  2.给组件传递数据/样式-->
+<!-- <my-prop title="嘿嘿嘿" titleclass="red"/>
+<my-prop title="哈哈哈" titleclass="blue"/>
+<my-prop title="嘻嘻嘻" titleclass="green"/> -->
+
+<!-- 3.组件与页面之间的数据传递 -->
+<view>当前数据：{{count}}</view>
+<my-event bind:increment="getCounter"/>
+
+<!-- 4.tab-control的练习 -->
+<w-tab-control title="{{['流行','新款','精选','爆款']}}" bind:tabClick="handleClickTab"/>
+
+<!-- 5.直接选中组件修改数据/调用方法 -->
+<button size="mini" bind:tap="handleData">修改组件里的数据</button>
+<my-sel id="sel"/>
+
+<!-- 6.具名插槽的基本使用 
+注意事项：1.给每一个插槽起一个名字：name属性
+         2.必须在component对象中添加一个选项：options —> multipleSlots:true
+-->
+<my-slot><button slot="left" size="mini">按钮</button></my-slot>
+<my-slot><text slot="right">哈哈哈，你好</text></my-slot>
+<my-slot><slider slot="center"></slider></my-slot>

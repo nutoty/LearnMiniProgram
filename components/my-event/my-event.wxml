@@ -1,0 +1,1 @@
+<button bindtap="handleCount" size="mini">操作+1</button>

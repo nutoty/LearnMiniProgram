@@ -1,0 +1,7 @@
+/* components/my-prop/my-prop.wxss */
+.title{
+  font-weight: 40rpx;
+}
+.content{
+  font-size: 20rpx;
+}
