@@ -1,0 +1,7 @@
+<view>我是详情页的标题</view>
+<text>我是详情页的内容</text>
+
+<navigator url="/pages/comment/comment">跳转到评论页</navigator>
+<navigator open-type="navigateBack">返回</navigator>
+
+<button size="mini" bind:tap="handleNavigatorBack">点击我返回到首页</button>
